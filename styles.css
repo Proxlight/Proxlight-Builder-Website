@@ -1,0 +1,197 @@
+/* Fluent Design Dark Mode with Glassmorphism Styles */
+
+body {
+    background: #0f0f0f;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(45deg, #ff00cc, #3333ff);
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.6;
+    animation: float 6s infinite ease-in-out;
+}
+
+.glow:nth-child(2) {
+    background: linear-gradient(45deg, #33ffcc, #ff3333);
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: 20%;
+    animation-delay: -3s;
+}
+
+.glow:nth-child(3) {
+    background: linear-gradient(45deg, #ffff33, #33ff66);
+    width: 500px;
+    height: 500px;
+    top: 70%;
+    left: 70%;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-20px) translateX(20px);
+    }
+}
+
+.container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    padding-top: 60px; /* Adjust top padding */
+    max-width: 800px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.about {
+    text-align: left;
+    margin-bottom: 20px;
+    color: #d0d0d0;
+}
+
+.about ul {
+    padding-left: 20px;
+}
+
+.about ul li {
+    margin-bottom: 10px;
+}
+
+.intro, .description {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #d0d0d0;
+}
+
+.scrollable-content {
+    max-height: 400px;
+    overflow: auto;
+}
+
+/* Webkit Scrollbar Styling */
+.scrollable-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.scrollable-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+.scrollable-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+ul {
+    text-align: left;
+    margin: 0 auto 40px auto;
+    padding: 0;
+    max-width: 600px;
+    list-style: none;
+    color: #d0d0d0;
+    font-size: 1.1em;
+}
+
+ul li {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px; /* Add margin-top */
+}
+
+.button {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 15px 30px;
+    font-size: 1em;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    .about ul li {
+        font-size: 1em;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
